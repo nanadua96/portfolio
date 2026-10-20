@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  border: 0;
 }
 
 :root {
@@ -15,7 +17,8 @@
   --title: calc(18rem / 16);
   --paragraph: calc(14rem / 16);
 
-  --8px: calc(12rem / 16);
+  --4px: calc(4rem / 16);
+  --8px: calc(8rem / 16);
   --12px: calc(12rem / 16);
   --14px: calc(14rem / 16);
   --16px: calc(16rem / 16);
@@ -67,9 +70,14 @@ a {
   flex-direction: column;
   /* gap: 16px; */
 
-  & a {
-    margin-bottom: var(--48px);
+  & .button {
+    /* margin-bottom: var(--48px); */
+    align-self: flex-start;
   }
+}
+
+.logo {
+  margin-bottom: var(--48px);
 }
 
 .container {
@@ -135,17 +143,34 @@ section {
 .project-item {
   display: flex;
   flex-direction: column;
-  gap: var(--8px);
+  gap: var(--4px);
 }
 
 .project-link {
   text-decoration: underline dotted;
 }
 
+.gobe {
+  margin-right: 4px;
+}
+
+.gari {
+  color: #a8a8a8;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--48px);
+}
+
 .button {
   padding: 6px 12px;
   border-radius: var(--radius-large);
-  text-decoration: underline dotted;
+  /* text-decoration: underline dotted; */
+  background-color: #f5f5f5;
 
   /* background-color: var(--content-primary);
   color: var(--background-primary); */
@@ -155,6 +180,18 @@ section {
     background-color: var(--content-primary);
     color: var(--background-primary);
     text-decoration: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: #bfbfbf;
+    color: black;
+
+    /* &:hover {
+      background-color: var(--content-primary);
+      color: var(--background-primary);
+    } */
   }
 }
 
@@ -172,4 +209,9 @@ section {
 
 footer h2 {
   margin-bottom: 16px;
+}
+
+::selection {
+  background-color: black;
+  color: white;
 }
